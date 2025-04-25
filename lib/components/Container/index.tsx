@@ -1,12 +1,57 @@
-import React from 'react';
+import { createElement } from 'react';
+import classes, { NeuroRoles } from '../../utils/classes';
 import styles from './styles.module.css';
 
-export const Container = (props: React.ButtonHTMLAttributes<HTMLDivElement>) => {
-    const { children, className, ...rest } = props;
+type ContainerBackgroundVariants = 'solid' | 'glass' | 'blurred';
+type ContainerTypes = 'generic' | 'section' | 'article';
+type ContainerVariants = 'neon' | 'target' | 'bracket' | 'rplcnt' | 'ghost';
+type ContainerValidTags = 'div' | 'section' | 'article' | 'header' | 'footer' | 'nav' | 'main' | 'aside';
 
-    return (
-        <div className={`${styles.container} ${className}`} {...rest}>
-            {children}
-        </div>
+type EitherTypeOrHtml =
+    | { type: ContainerTypes; tag?: never }
+    | { tag?: ContainerValidTags; type?: never };
+
+type IContainer = EitherTypeOrHtml & {
+    variant?: ContainerVariants;
+    role?: NeuroRoles;
+    backgroundType?: ContainerBackgroundVariants;
+} & React.HTMLAttributes<HTMLElement>;
+
+const ContainerElementMap = {
+    generic: 'div',
+    section: 'section',
+    article: 'article',
+    default: 'span'
+}
+
+const pre = 'neuro-container';
+
+export const Container = (props: IContainer) => {
+    const {
+        children,
+        tag,
+        backgroundType = 'transparent',
+        className = '',
+        role = 'default',
+        type = 'generic',
+        variant = 'ghost',
+        ...rest
+    } = props;
+
+    const containerClass = classes(
+        styles,
+        className,
+        pre,
+        backgroundType,
+        variant,
+        role
     );
+
+    const containerTag = tag || ContainerElementMap[type] || ContainerElementMap.default;
+
+    return createElement(containerTag, {
+        className: containerClass,
+        children,
+        ...rest,
+    });
 };
