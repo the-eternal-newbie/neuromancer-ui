@@ -1,7 +1,54 @@
-.label {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 4px;
+.neuro-label {
+    margin: 0;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.neuro-label-terminal {
+    font-family: var(--neuro-label-font, var(--terminal-font));
+    text-transform: uppercase;
+}
+
+.neuro-label-console {
+    font-family: var(--neuro-label-font, var(--terminal-font));
+}
+
+.neuro-label-bits {
+    font-family: var(--neuro-label-font, var(--bits-font));
+}
+
+.neuro-label-neon {
+    font-family: var(--neuro-label-font, var(--terminal-font));
+    text-transform: uppercase;
+    text-shadow: 0px 0px 8px currentColor;
+}
+
+.neuro-label-default {
+    color: var(--neuro-role-def, var(--dark-core));
+}
+
+.neuro-label-primary {
+    color: var(--neuro-role-py, var(--neon-mint));
+}
+
+.neuro-label-secondary {
+    color: var(--neuro-role-sy, var(--interface-glow));
+}
+
+.neuro-label-tertiary {
+    color: var(--neuro-role-ty, var(--ghost-white));
+}
+
+.neuro-label-info {
+    color: var(--neuro-role-info, var(--deep-signal));
+}
+
+.neuro-label-warning {
+    color: var(--neuro-role-warn, var(--amber-alert));
+}
+
+.neuro-label-error {
+    color: var(--neuro-role-error, var(--system-breach));
 }
