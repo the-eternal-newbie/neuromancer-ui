@@ -30,7 +30,7 @@ export const Container = (props: IContainer) => {
     const {
         children,
         tag,
-        backgroundType = 'transparent',
+        backgroundType = 'glass',
         className = '',
         role = 'default',
         type = 'generic',
