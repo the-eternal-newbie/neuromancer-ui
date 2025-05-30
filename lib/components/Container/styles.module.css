@@ -1,8 +1,97 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Base component */
+.neuro-container {
     width: 100%;
     height: 100%;
+    margin: var(--neuro-container-mg, 8px);
+    padding: var(--neuro-container-pd, 8px);
+}
+
+/* Variants */
+.neuro-container-ghost {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.neuro-container-neon {
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 0 8px var(--c);
+}
+
+.neuro-container-rplcnt {
+    border-width: 1px;
+    box-shadow: 6px 8px var(--c);
+}
+
+.neuro-container-bracket {
+    --b: var(--neuro-container-target-bd, 1px);
+    --w: var(--neuro-container-target-wd, 16px);
+
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+
+    background:
+        conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+        conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100% 0 / var(--_p),
+        conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0 100% / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+}
+
+/* Backgrounds */
+.neuro-container-solid {
+    background-color: var(--neuro-container-bg, var(--bc));
+}
+
+.neuro-container-glass {
+    background-color: transparent;
+}
+
+.neuro-container-blurred {
+    opacity: var(--neuro-container-opacity, 0.8);
+    background-color: var(--neuro-container-bg, var(--dark-core));
+    backdrop-filter: blur(8px);
+}
+
+/* Roles */
+.neuro-container-default {
+    --c: var(--neuro-role-def, var(--dark-core));
+    --bc: var(--neuro-role-def-bg, var(--ghost-white));
+    border-color: var(--neuro-role-def, var(--dark-core));
+}
+
+.neuro-container-primary {
+    --c: var(--neuro-role-py, var(--neon-mint));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-py, var(--neon-mint));
+}
+
+.neuro-container-secondary {
+    --c: var(--neuro-role-sy, var(--interface-glow));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-sy, var(--interface-glow));
+}
+
+.neuro-container-tertiary {
+    --c: var(--neuro-role-ty, var(--ghost-white));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-ty, var(--ghost-white));
+}
+
+.neuro-container-info {
+    --c: var(--neuro-role-info, var(--deep-signal));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-info, var(--deep-signal));
+}
+
+.neuro-container-warning {
+    --c: var(--neuro-role-warn, var(--amber-alert));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-warn, var(--amber-alert));
+}
+
+.neuro-container-error {
+    --c: var(--neuro-role-error, var(--system-breach));
+    --bc: var(--neuro-role-py-bg, var(--dark-core));
+    border-color: var(--neuro-role-error, var(--system-breach));
 }
