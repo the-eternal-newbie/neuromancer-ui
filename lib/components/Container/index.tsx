@@ -1,6 +1,6 @@
 import { createElement } from 'react';
-import classes, { NeuroRoles } from '../../utils/classes';
 import styles from './styles.module.css';
+import classes, { NeuroRoles } from '../../utils/classes';
 
 type ContainerBackgroundVariants = 'solid' | 'glass' | 'blurred';
 type ContainerTypes = 'generic' | 'section' | 'article';

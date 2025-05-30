@@ -1,3 +1,4 @@
+/* Base component */
 .neuro-container {
     width: 100%;
     height: 100%;
@@ -5,6 +6,7 @@
     padding: var(--neuro-container-pd, 8px);
 }
 
+/* Variants */
 .neuro-container-ghost {
     border: none;
     margin: 0;
@@ -15,6 +17,11 @@
     border-width: 1px;
     border-style: solid;
     box-shadow: 0 0 8px var(--c);
+}
+
+.neuro-container-rplcnt {
+    border-width: 1px;
+    box-shadow: 6px 8px var(--c);
 }
 
 .neuro-container-bracket {
@@ -31,20 +38,22 @@
         conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
 }
 
-.neuro-container-transparent {
-    background-color: transparent;
-}
-
+/* Backgrounds */
 .neuro-container-solid {
     background-color: var(--neuro-container-bg, var(--bc));
 }
 
 .neuro-container-glass {
+    background-color: transparent;
+}
+
+.neuro-container-blurred {
     opacity: var(--neuro-container-opacity, 0.8);
     background-color: var(--neuro-container-bg, var(--dark-core));
     backdrop-filter: blur(8px);
 }
 
+/* Roles */
 .neuro-container-default {
     --c: var(--neuro-role-def, var(--dark-core));
     --bc: var(--neuro-role-def-bg, var(--ghost-white));

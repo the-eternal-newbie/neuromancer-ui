@@ -103,7 +103,7 @@ export const BracketVariant: Story = {
 export const ReplicantVariant: Story = {
   args: {
     variant: 'rplcnt',
-    backgroundType: 'blurred',
+    backgroundType: 'solid',
     role: 'warning',
     type: 'generic',
     children: renderLabel('Replicant Solid Container', 'terminal', 'warning'),
